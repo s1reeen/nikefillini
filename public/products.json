@@ -1,0 +1,94 @@
+{
+  "sale": [
+    {
+      "imageSrc": "https://static.ftshp.digital/img/p/6/7/4/9/7/1/674971.jpg",
+      "altText": "Vans Knu Skool shoes",
+      "captionText": "Go to product",
+      "name": "Nike Air \n Jordan",
+      "originalPrice": "85€",
+      "salePrice": "45€"
+    },
+    {
+      "imageSrc": "https://static.ftshp.digital/img/p/8/3/4/9/2/5/834925.jpg",
+      "altText": "Vans Knu Skool shoes",
+      "captionText": "Go to product",
+      "name": "Adidas \n Campus",
+      "originalPrice": "75€",
+      "salePrice": "45€"
+    },
+    {
+      "imageSrc": "https://static.ftshp.digital/img/p/4/2/4/7/0/8/424708.jpg",
+      "altText": "Converse Chuck shoes",
+      "captionText": "Go to product",
+      "name": "Converse \n Chuck",
+      "originalPrice": "55€",
+      "salePrice": "25€"
+    },
+    {
+      "imageSrc": "https://static.ftshp.digital/img/p/8/9/0/6/9/2/890692.jpg",
+      "altText": "Vans Knit Skool shoes",
+      "captionText": "Go to product",
+      "name": "Vans Knu \n Skool",
+      "originalPrice": "65€",
+      "salePrice": "35€"
+    }
+  ],
+  "new": [
+    {
+      "imageSrc": "https://static.ftshp.digital/img/p/1/3/7/8/3/6/9/1378369.jpg",
+      "altText": "Nike P-6000 shoes",
+      "captionText": "Go to product",
+      "name": "Nike \n P-6000",
+      "price": "105€"
+    },
+    {
+      "imageSrc": "https://static.ftshp.digital/img/p/1/3/4/7/3/7/0/1347370.jpg",
+      "altText": "Asics Gel Kayano 14 shoes",
+      "captionText": "Go to product",
+      "name": "Asics Gel \n Kayano 14",
+      "price": "145€"
+    },
+    {
+      "imageSrc": "https://static.ftshp.digital/img/p/7/6/9/8/4/9/769849.jpg",
+      "altText": "Converse Chuck 70 shoes",
+      "captionText": "Go to product",
+      "name": "Converse \n Chuck 70",
+      "price": "65€"
+    },
+    {
+      "imageSrc": "https://static.ftshp.digital/img/p/1/3/7/3/3/4/1/1373341.jpg",
+      "altText": "Adidas Superstar II shoes",
+      "captionText": "Go to product",
+      "name": "Adidas \n Superstar II",
+      "price": "65€"
+    },
+    {
+      "imageSrc": "https://static.ftshp.digital/img/p/1/2/8/5/2/9/1/1285291.jpg",
+      "altText": "Nike V2K RUN shoes",
+      "captionText": "Go to product",
+      "name": "Nike \n V2K RUN",
+      "price": "165€"
+    },
+    {
+      "imageSrc": "https://static.ftshp.digital/img/p/1/0/7/2/2/5/8/1072258.jpg",
+      "altText": "SALOMON XT-6 shoes",
+      "captionText": "Go to product",
+      "name": "SALOMON \n XT-6",
+      "price": "195€"
+    },
+    {
+      "imageSrc": "https://static.ftshp.digital/img/p/1/3/6/8/1/2/7/1368127.jpg",
+      "altText": "Air Jordan 1 Mid Se shoes",
+      "captionText": "Go to product",
+      "name": "Air Jordan \n 1 Mid Se",
+      "price": "205€"
+    },
+    {
+      "imageSrc": "https://static.ftshp.digital/img/p/1/3/6/6/0/4/2/1366042.jpg",
+      "altText": "Puma RS-X Efekt PRM shoes",
+      "captionText": "Go to product",
+      "name": "Puma RS-X \n Efekt PRM",
+      "price": "85€"
+    }
+  ]
+}
