@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 
 interface TextPressureProps {
   text?: string;
@@ -56,6 +56,31 @@ const TextPressure: React.FC<TextPressureProps> = ({
     return Math.sqrt(dx * dx + dy * dy);
   };
 
+  const setSize = useCallback(() => {
+    if (!containerRef.current || !titleRef.current) return;
+
+    const { width: containerW, height: containerH } =
+      containerRef.current.getBoundingClientRect();
+
+    let newFontSize = containerW / (chars.length / 2);
+    newFontSize = Math.max(newFontSize, minFontSize);
+
+    setFontSize(newFontSize);
+    setScaleY(1);
+    setLineHeight(1);
+
+    requestAnimationFrame(() => {
+      if (!titleRef.current) return;
+      const textRect = titleRef.current.getBoundingClientRect();
+
+      if (scale && textRect.height > 0) {
+        const yRatio = containerH / textRect.height;
+        setScaleY(yRatio);
+        setLineHeight(yRatio);
+      }
+    });
+  }, [chars.length, minFontSize, scale]);
+
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       cursorRef.current.x = e.clientX;
@@ -85,36 +110,12 @@ const TextPressure: React.FC<TextPressureProps> = ({
     };
   }, []);
 
-  const setSize = () => {
-    if (!containerRef.current || !titleRef.current) return;
-
-    const { width: containerW, height: containerH } =
-      containerRef.current.getBoundingClientRect();
-
-    let newFontSize = containerW / (chars.length / 2);
-    newFontSize = Math.max(newFontSize, minFontSize);
-
-    setFontSize(newFontSize);
-    setScaleY(1);
-    setLineHeight(1);
-
-    requestAnimationFrame(() => {
-      if (!titleRef.current) return;
-      const textRect = titleRef.current.getBoundingClientRect();
-
-      if (scale && textRect.height > 0) {
-        const yRatio = containerH / textRect.height;
-        setScaleY(yRatio);
-        setLineHeight(yRatio);
-      }
-    });
-  };
-
   useEffect(() => {
+    const handleResize = () => setSize();
     setSize();
-    window.addEventListener("resize", setSize);
-    return () => window.removeEventListener("resize", setSize);
-  }, [scale, text]);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [setSize, scale, text]);
 
   useEffect(() => {
     let rafId: number;
@@ -209,7 +210,10 @@ const TextPressure: React.FC<TextPressureProps> = ({
         {chars.map((char, i) => (
           <span
             key={i}
-            ref={(el) => (spansRef.current[i] = el)}
+            ref={(el: HTMLSpanElement | null) => {
+              spansRef.current[i] = el;
+              return el;
+            }}
             data-char={char}
             className="inline-block"
           >
